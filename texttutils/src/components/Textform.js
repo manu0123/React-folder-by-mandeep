@@ -5,16 +5,23 @@ export default function Textform(props) {
     // console.log("upper case was clicked"+text);
     let newtext = text.toUpperCase();
     setText(newtext);
+    props.showAlert("converted into uppercase","success")
+
   }
   const handleoffClick=()=>{
     // console.log("upper case was clicked"+text);
     let newtext = text.toLowerCase();
     setText(newtext);
+    props.showAlert("converted into lowercase","success")
+
   }
   const handleclear=()=>{
     // console.log("upper case was clicked"+text);
     let newtext = ("");
     setText(newtext);
+    props.showAlert("Text is clear now","success")
+
+
   }
   const onChangeHandler=(event)=>{
     // console.log("onChangle");
@@ -33,7 +40,7 @@ export default function Textform(props) {
   <textarea className="form-control" value ={text} onChange = {onChangeHandler} style ={{backgroundColor :props.mode === 'dark'?'grey':'white',color:props.mode === 'dark'?'white':'black'}}id="mybox" rows="8"></textarea>
 </div>
 <button className="btn btn-primary" onClick={handleOnClick}> Convert to Upper case</button>
-<button className="btn btn-primary mx-3" onClick={handleoffClick}> Convert to Upper case</button>
+<button className="btn btn-primary mx-3" onClick={handleoffClick}> Convert to Lowercase</button>
 <button className="btn btn-primary mx-3" onClick={handleclear}> Clear text</button>
 
     </div>
